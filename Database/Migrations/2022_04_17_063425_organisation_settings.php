@@ -25,14 +25,24 @@ class OrganisationSettings extends SettingsMigration
         });
     }
 
-     /**
+    /**
      * Reverse the migrations.
      *
      * @return void
      */
     public function down()
     {
-        //
+        $this->migrator->inGroup('organisation', function (SettingsBlueprint $blueprint): void {
+            $blueprint->delete('company_name');
+            $blueprint->delete('company_acronym');
+            $blueprint->delete('company_logo');
+            $blueprint->delete('company_email');
+            $blueprint->delete('company_address');            
+            $blueprint->delete('company_telephone');            
+            $blueprint->delete('company_website');            
+            $blueprint->delete('company_country');            
+
+        });
     }
 
 }
