@@ -1,0 +1,32 @@
+{
+    "name": "luanardev/controlpanel-module",
+    "type": "laravel-module",
+    "description": "Lumis ControlPanel Module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brian Simpokolwe",
+            "email": "bsimpokolwe@luanar.ac.mw"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Luanardev\\Modules\\ControlPanel\\Providers\\ControlPanelServiceProvider"
+            ],
+            "aliases": {
+                "OrgSettings": "Luanardev\\Modules\\ControlPanel\\Facades\\OrgSettings"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Luanardev\\Modules\\ControlPanel\\": ""
+        }
+    },
+    "scripts": {      
+        "post-install-module-cmd": [
+            "@php artisan module:install controlpanel"
+        ]
+    }
+}

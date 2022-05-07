@@ -1,0 +1,15 @@
+{
+    "name": "ControlPanel",
+    "alias": "controlpanel",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Luanardev\\Modules\\ControlPanel\\Providers\\ControlPanelServiceProvider"
+    ],
+    "aliases": {
+        "OrgSettings": "Luanardev\\Modules\\ControlPanel\\Facades\\OrgSettings"
+    },
+    "files": [],
+    "requires": []
+}
