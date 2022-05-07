@@ -37,7 +37,7 @@
 					<div class="small-box bg-info">
 						<div class="inner text-center">
 							<h4>Users</h4>   
-							<p>{{App\Models\System::count()}} users</p>     
+							<p>{{App\Models\User::count()}} users</p>     
 						</div>
 					</div>
 				</a>
