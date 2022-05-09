@@ -37,7 +37,7 @@ class OrgLogo extends LivewireUI
             'logo' => 'required|image|max:10240',
         ]);
 
-        $currentLogo = OrSettings::get('company_logo');
+        $currentLogo = OrgSettings::get('company_logo');
 
         $path = $this->logo->storePublicly('platform/logo','public');
         
