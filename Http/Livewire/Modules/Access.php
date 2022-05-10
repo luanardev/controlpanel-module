@@ -72,7 +72,7 @@ class Access extends LivewireUI
     public function updatedSelectAll($value)
     {
         if($value){
-            $this->permissions = $this->app->permissions()->pluck('id')->toArray();
+            $this->permissions = $this->module->permissions()->pluck('id')->toArray();
         }else{
             $this->permissions = [];
         }
