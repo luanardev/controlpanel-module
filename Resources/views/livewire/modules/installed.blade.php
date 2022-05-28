@@ -21,7 +21,7 @@
                     <a href="{{route('modules.show', $module)}}">                     
                         <div class="card card-widget widget-user">									
                             <div class="widget-user-header">
-                                <img class="img-circle" src="{{asset('assets/images/app.png')}}" width="50px" />										
+                                <img class="img-circle" src="{{asset('img/app.png')}}" width="50px" />										
                                 <h6 class="widget-user-desc text-center">{{$module->display_name}}</h6>
                                 <p>{!! $module->statusBadge() !!}</p>									
                             </div>									
