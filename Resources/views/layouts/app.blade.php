@@ -1,4 +1,4 @@
-@extends('adminlte::layouts.app')
+@extends('layouts.app')
 
 @section('navbar')
     @include('controlpanel::layouts.navbar')
@@ -18,6 +18,7 @@
 
 @section('css') 
     @livewireAlertStyles
+    @livewireLoaderStyles
 @endsection
 
 @section('js')

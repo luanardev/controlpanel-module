@@ -4,6 +4,7 @@ namespace Luanardev\Modules\ControlPanel\Http\Livewire\Modules;
 use Luanardev\LivewireUI\LivewireUI;
 use App\Models\System;
 
+
 class Installed extends LivewireUI
 {
     public $modules = [];

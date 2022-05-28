@@ -4,7 +4,6 @@
     "configurable": false,
 
     "permissions": [
-        "org_setup",
         "create_user",
         "view_user",
         "update_user",
@@ -12,6 +11,7 @@
         "create_role",
         "view_role",
         "update_role",
-        "delete_role"
+        "delete_role",
+        "configure_module"
     ]
 }

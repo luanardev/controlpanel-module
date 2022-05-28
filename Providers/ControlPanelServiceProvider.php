@@ -4,7 +4,6 @@ namespace Luanardev\Modules\ControlPanel\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
-use Luanardev\Modules\ControlPanel\Settings\OrgSettings;
 
 class ControlPanelServiceProvider extends ServiceProvider
 {
@@ -30,6 +29,8 @@ class ControlPanelServiceProvider extends ServiceProvider
         $this->registerViews();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
     }
+	
+	
 
     /**
      * Register the service provider.
@@ -41,9 +42,6 @@ class ControlPanelServiceProvider extends ServiceProvider
         $this->app->register(RouteServiceProvider::class);
         $this->app->register(EventServiceProvider::class);
         
-        $this->app->bind('orgsettings',function(){
-            return new OrgSettings();
-        });
     }
 
     /**

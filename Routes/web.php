@@ -15,12 +15,14 @@ Route::prefix('controlpanel')->middleware(['auth', 'module:controlpanel', 'role:
     
     Route::get('/', 'HomeController@index')->name('controlpanel.home');
     
-    Route::get('organisation', 'OrganisationController@index')->name('organisation.index');
     Route::get('modules', 'ModuleController@index')->name('modules.index');
+	
     Route::get('modules/{module}', 'ModuleController@show')->name('modules.show');
 
     Route::get('users/search', 'UserController@search')->name('users.search');
+	
     Route::resource('users', 'UserController');
+	
     Route::resource('roles', 'RoleController');
 
 
