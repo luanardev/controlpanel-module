@@ -13,10 +13,7 @@
         "laravel": {
             "providers": [
                 "Luanardev\\Modules\\ControlPanel\\Providers\\ControlPanelServiceProvider"
-            ],
-            "aliases": {
-                "OrgSettings": "Luanardev\\Modules\\ControlPanel\\Facades\\OrgSettings"
-            }
+            ]
         }
     },
     "autoload": {
