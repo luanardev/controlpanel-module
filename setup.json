@@ -1,0 +1,19 @@
+{
+    "name": "Control Panel",
+    "group": "admin",
+    "icon": "fa fa-tachometer-alt",
+    "color": "#17a2b8",
+    "background": "rgba(22, 160, 133, 0.1)",
+    "permissions": [
+        "create-user",
+        "read-user",
+        "update-user",
+        "delete-user",
+        "create-role",
+        "read-role",
+        "update-role",
+        "delete-role",
+        "manage-app",
+        "read-user-log"
+    ]
+}

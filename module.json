@@ -1,0 +1,14 @@
+{
+    "name": "Controlpanel",
+    "alias": "controlpanel",
+    "description": "",
+    "keywords": [],
+    "priority": 1,
+    "providers": [
+        "Lumis\\Controlpanel\\Providers\\ControlpanelServiceProvider"
+    ],
+    "aliases": {
+    },
+    "files": [],
+    "requires": []
+}
