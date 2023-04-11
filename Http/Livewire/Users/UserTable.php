@@ -4,10 +4,10 @@ namespace Lumis\Controlpanel\Http\Livewire\Users;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
+use Lumis\Organization\Entities\Campus;
 use Lumis\Organization\Entities\UserCampus;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-use Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn;
 
 class UserTable extends DataTableComponent
 {
@@ -68,10 +68,18 @@ class UserTable extends DataTableComponent
 
     public function builder(): Builder
     {
-        return User::query()
+        $campus = Campus::getUserCampus();
+        return User::query()->where('campus_id', $campus->id)
             ->when($this->getSearch(),
                 fn(Builder $query, $value) => $query->search($value)
             );
+    }
+
+    protected function getListeners(): array
+    {
+        return[
+            'refresh' => '$refresh'
+        ];
     }
 
 }
