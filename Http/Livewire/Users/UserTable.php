@@ -58,8 +58,13 @@ class UserTable extends DataTableComponent
             Column::make('Name'),
             Column::make('Email'),
             Column::make('Campus')->label(function($row, Column $column){
-                $campus = UserCampus::get($row->id);
-                return $campus?->name;
+				if(isset($row)){
+					$campus = UserCampus::get($row->id);
+					return $campus?->name;
+				}else{
+					return null;
+				}
+                
             }),
             Column::make('Status'),
             Column::make('ID', 'id'),
@@ -69,7 +74,10 @@ class UserTable extends DataTableComponent
     public function builder(): Builder
     {
         $campus = Campus::getUserCampus();
-        return User::query()->where('campus_id', $campus->id)
+        return User::query()
+			->when($campus, 
+				fn(Builder $query, $value) => $query->where('campus_id', $campus->id)
+			)
             ->when($this->getSearch(),
                 fn(Builder $query, $value) => $query->search($value)
             );
